@@ -28,35 +28,97 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <table class="table table-bordered text-center">
                         <thead>
                             <tr class="bg-light-gray">
-                                <th class="text-uppercase">Time
-                                </th>
+                                <th class="text-uppercase">Waktu</th>
+                                <th class="text-uppercase">Unit</th>
                                 <th class="text-uppercase"><?php echo date('l'); ?></th>
                                 <th class="text-uppercase"><?php echo date('l',strtotime("+1 day")); ?></th>
                                 <th class="text-uppercase"><?php echo date('l',strtotime("+2 day")); ?></th>
                                 <th class="text-uppercase"><?php echo date('l',strtotime("+3 day")); ?></th>
-                                <th class="text-uppercase"><?php echo date('l',strtotime("+4 day")); ?></th>
-                                <th class="text-uppercase"><?php echo date('l',strtotime("+5 day")); ?></th>
-                                <th class="text-uppercase"><?php echo date('l',strtotime("+6 day")); ?></th>
-                                <th class="text-uppercase"><?php echo date('l',strtotime("+7 day")); ?></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php 
-                                $no = 1;
-                                foreach ($jadwal as $jd) {
-                                ?>
-                            <tr>
-                                <td class="align-middle"><?=$jd['jam'];?></td>
-                                <td>
-                                    <?php foreach ($jadwal_detail as $jdrow) { 
-                                            if ($jdrow['id_user'] == $jd['id_user']) {
+                        <tr>
+                        <td rowspan="2" class="align-middle">07:00 - 16:00</td>
+                        <td>Office Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '07:00:00' and $jd['unit'] == 'Office' ) {
                                             ?>
-                                                <?=$jdrow['usr_nama'];?>
-                                        <?php }
-                                        } ?>
-                                </td>
-                            </tr>
-                            <?php } ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">07:00 - 16:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        </td>
+                        <?php } ?>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                        <td>Store Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '07:00:00' and $jd['unit'] == 'Store' ) {
+                                            ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">07:00 - 16:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        <?php } ?>
+                        <?php } ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">15:00 - 24:00</td>
+                        <td>Office Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '15:00:00' and $jd['unit'] == 'Office' ) {
+                                            ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">15:00 - 24:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        </td>
+                        <?php } ?>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                    <td>Store Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '15:00:00' and $jd['unit'] == 'Store' ) {
+                                            ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">15:00 - 24:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        <?php } ?>
+                        <?php } ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">22:00 - 07:00</td>
+                        <td>Office Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '22:00:00' and $jd['unit'] == 'Office' ) {
+                                            ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">22:00 - 07:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        </td>
+                        <?php } ?>
+                        <?php } ?>
+                    </tr>
+                    <tr>
+                    <td>Store Support</td>
+                        <?php foreach ($jadwal as $jd) { 
+                                            if ($jd['jam'] == '22:00:00' and $jd['unit'] == 'Store' ) {
+                                            ?>
+                        <td>
+                        <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13"><?=$jd['usr_nama'];?></span>
+                        <div class="margin-10px-top font-size14">22:00 - 07:00</div>
+                        <div class="font-weight-bold font-size13 text-light-black "><?=$jd['shf_deskripsi'];?></div>
+                        <?php } ?>
+                        <?php } ?>
+                        </td>
+                    </tr>
+                            
                         </tbody>
                     </table>
                 </div>

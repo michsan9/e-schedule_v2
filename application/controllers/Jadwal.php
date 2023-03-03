@@ -12,12 +12,13 @@ class Jadwal extends CI_Controller
         $this->load->model('jadwal_model');
         $this->auth->restrict();
     }
-
+ 
     public function index()
     {
         $data['title'] = 'Laporan - SIPROTAN';
 
         $data['jadwal'] = $this->jadwal_model->get_jadwal();
+   
 
         $data['jadwal_detail'] = $this->jadwal_model->get_jadwal_detail();
 
